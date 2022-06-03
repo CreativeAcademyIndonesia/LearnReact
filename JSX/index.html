@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
-
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
@@ -20,6 +21,15 @@
     <ul id="menu">
         <li>Apel</li>
     </ul>
+
+    <div id="button-wraper">
+        <button>Hallo</button>
+    </div>
+
+    <div id="kartu">
+
+    </div>
+    </div>
 
     <script>
         // 1. Buat menggunakan varible dan innerHTML
@@ -37,16 +47,45 @@
         menu.appendChild(element('Agus'));
         menu.appendChild(element('Andri'));
 
-        // 3. 
+        // 3. Components Button
+        function button(text) {
+            let btn = document.createElement('button');
+            btn.textContent = text;
+            return btn;
+        }
+
+        const buttons = document.getElementById('button-wraper');
+        // buttons.appendChild(button('hi'));
+        const buah = ['apel', 'anggur', 'mangga', 'semangka', 'alpukat']
+        buah.forEach(element => {
+            buttons.appendChild(button(element))
+        });
+
+        // 4. Component Card 
+        const cr =
+            '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">'
+        const cardswraper = document.getElementById('kartu');
+        console.log(cardswraper);
+        cardswraper.appendChild(cr);
+
+        function cards() {}
     </script>
-    <!-- <script type="text/babel">
+    <script type="text/babel">
         class Hello extends React.Component {
-        render() {
-          return <h1>Hello World Reactjs!</h1>
+            render() {
+                const hallo = (
+                    <div class="w-25">
+                        <div class="card p-4">
+                            <h1>Hallo</h1>    
+                            <p>Ini adalah card</p>
+                        </div>
+                    </div>
+                )
+          return hallo;
         }
       }
 
-      ReactDOM.render(<Hello/>, document.getElementById("app")); -->
+      ReactDOM.render(<Hello/>, document.getElementById("app"));
     </script>
 </body>
 
