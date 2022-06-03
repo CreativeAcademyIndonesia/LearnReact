@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="app"></div>
+    <ul id="menu">
+        <li>Apel</li>
+    </ul>
+
+    <script>
+        // 1. Buat menggunakan varible dan innerHTML
+        const el = "<h1>Hallo</h1>"
+        document.getElementById('app').innerHTML = el;
+
+        // 2. Buat menggunakan function 
+        function element(element) {
+            let li = document.createElement('li');
+            li.textContent = element;
+            return li;
+        }
+
+        const menu = document.getElementById('menu');
+        menu.appendChild(element('Agus'));
+        menu.appendChild(element('Andri'));
+
+        // 3. 
+    </script>
+    <!-- <script type="text/babel">
+        class Hello extends React.Component {
+        render() {
+          return <h1>Hello World Reactjs!</h1>
+        }
+      }
+
+      ReactDOM.render(<Hello/>, document.getElementById("app")); -->
+    </script>
+</body>
+
+</html>
